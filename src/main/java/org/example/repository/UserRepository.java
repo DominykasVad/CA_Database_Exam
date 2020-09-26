@@ -20,7 +20,7 @@ public class UserRepository {
         this.databaseManager = new DatabaseManager();
     }
 
-    public UserModel getUser(int userId) {
+    public UserModel getUserById(int userId) {
         Connection connection = null;
         PreparedStatement preparedStatement;
         UserModel user = null;
