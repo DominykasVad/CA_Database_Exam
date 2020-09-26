@@ -25,4 +25,12 @@ public class SelectStatements {
     public static final String SELECT_ACCOUNT_BY_IBAN = "SELECT a.id, a.iban, a.balance\n" +
             "FROM Accounts a\n" +
             "WHERE iban = ?;\n";
+
+    public static final String SELECT_TRANSACTION_BY_ID = "SELECT t.id, t.from_account_iban, t.to_account_iban, t.amount, t.date, t.time\n" +
+            "FROM Transactions t\n" +
+            "WHERE id = ?;";
+
+    public static final String SELECT_TRANSACTION_BY_IBAN = "SELECT t.id, t.from_account_iban, t.to_account_iban, t.amount, t.date, t.time\n" +
+            "FROM Transactions t\n" +
+            "WHERE to_account_iban = ? OR from_account_iban = ?;\n";
 }
