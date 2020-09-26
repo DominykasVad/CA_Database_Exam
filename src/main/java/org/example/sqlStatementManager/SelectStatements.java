@@ -1,7 +1,7 @@
 package org.example.sqlStatementManager;
 
 public class SelectStatements {
-    // TODO: 9/26/20 Move statements to .sql files in resources
+    // TODO: 9/26/20 Move statements to .properties files in resources
     public static final String SELECT_USER_LOGIN = "SELECT u.id\n" +
             "FROM Users u\n" +
             "WHERE username = ?\n" +
@@ -18,4 +18,11 @@ public class SelectStatements {
             "FROM Users u\n" +
             "WHERE id = ?;\n";
 
+    public static final String SELECT_ACCOUNT_BY_ID = "SELECT a.id, a.iban, a.balance\n" +
+            "FROM Accounts a\n" +
+            "WHERE id = ?;\n";
+
+    public static final String SELECT_ACCOUNT_BY_IBAN = "SELECT a.id, a.iban, a.balance\n" +
+            "FROM Accounts a\n" +
+            "WHERE iban = ?;\n";
 }
