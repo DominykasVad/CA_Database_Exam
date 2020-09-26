@@ -11,7 +11,7 @@ public class UserModelBuilder {
     private String surname;
     private String phoneNumber;
     private String emailAddress;
-    private AccountModel account;
+    private String account;
 
     public UserModelBuilder setId(int id) {
         this.id = id;
@@ -48,7 +48,7 @@ public class UserModelBuilder {
         return this;
     }
 
-    public UserModelBuilder setAccount(AccountModel account) {
+    public UserModelBuilder setAccount(String account) {
         this.account = account;
         return this;
     }

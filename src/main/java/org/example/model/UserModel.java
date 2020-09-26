@@ -8,9 +8,9 @@ public class UserModel {
     private String surname;
     private String phoneNumber;
     private String emailAddress;
-    private AccountModel account;
+    private String account;
 
-    public UserModel(int id, String username, String password, String name, String surname, String phoneNumber, String emailAddress, AccountModel account) {
+    public UserModel(int id, String username, String password, String name, String surname, String phoneNumber, String emailAddress, String  account) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -77,11 +77,11 @@ public class UserModel {
         this.emailAddress = emailAddress;
     }
 
-    public AccountModel getAccount() {
+    public String getAccount() {
         return account;
     }
 
-    public void setAccount(AccountModel account) {
+    public void setAccount(String account) {
         this.account = account;
     }
 }
