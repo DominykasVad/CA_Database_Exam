@@ -17,7 +17,7 @@ public class UserRepository {
     private DatabaseManager databaseManager;
 
     public UserRepository() throws IOException {
-        this.databaseManager = new DatabaseManager();
+        this.databaseManager = DatabaseManager.getDatabaseManagerInstance();
     }
 
     public UserModel getUserById(int userId) {

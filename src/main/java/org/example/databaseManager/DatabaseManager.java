@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DatabaseManager {
+    private static DatabaseManager databaseManager = null;
     private String databaseUrlTemplate;
     private String databaseHost;
     private String databasePort;
@@ -14,7 +15,7 @@ public class DatabaseManager {
     private String databaseUsername;
     private String databasePassword;
 
-    public DatabaseManager() throws IOException {
+    private DatabaseManager() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("database.properties");
         Properties properties = new Properties();
         properties.load(inputStream);
@@ -38,6 +39,12 @@ public class DatabaseManager {
             throwables.printStackTrace();
         }
         return null;
+    }
+
+    public static DatabaseManager getDatabaseManagerInstance() throws IOException {
+        if (databaseManager == null)
+            databaseManager = new DatabaseManager();
+        return databaseManager;
     }
 
 }

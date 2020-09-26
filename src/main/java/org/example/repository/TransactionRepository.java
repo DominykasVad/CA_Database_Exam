@@ -18,7 +18,7 @@ public class TransactionRepository {
     private DatabaseManager databaseManager;
 
     public TransactionRepository() throws IOException {
-        this.databaseManager = new DatabaseManager();
+        this.databaseManager = DatabaseManager.getDatabaseManagerInstance();
     }
 
     public TransactionModel getTransactionById(int transactionId) {
