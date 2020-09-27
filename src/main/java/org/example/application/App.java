@@ -69,6 +69,7 @@ public class App {
                     register();
                     break;
                 case 2: // login
+                    // TODO: 9/27/20 Check if user table is empty
                     user = login();
                     account = accountRepository.getAccountByIban(user.getAccount());
                     assert user.getAccount().equals(account.getIban());
@@ -177,6 +178,7 @@ public class App {
         BigDecimal amount = getAmountToSend(account.getBalance());
         System.out.println("Gavejo saskaitos IBAN");
         receiverIban = scanner.next();
+        // TODO: 9/27/20 IBAN validation
         newTransactionHandler.handle(receiverIban, account.getIban(), amount);
         System.out.println("Pervesta!");
         promptEnterKey();
