@@ -8,7 +8,8 @@ import java.sql.*;
 import java.time.LocalDate;
 
 import static org.example.sqlStatementManager.InsertStatements.INSERT_NEW_TRANSACTION;
-import static org.example.sqlStatementManager.UpdateStatements.*;
+import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE_ADD;
+import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE_SUBTRACT;
 
 public class NewTransactionHandler {
 

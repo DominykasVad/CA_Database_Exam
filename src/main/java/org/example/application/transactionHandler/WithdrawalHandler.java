@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE;
+import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE_SUBTRACT;
 
 public class WithdrawalHandler {
 
@@ -23,9 +23,10 @@ public class WithdrawalHandler {
         PreparedStatement preparedStatement;
         try {
             connection = databaseManager.getConnection();
-            preparedStatement = connection.prepareStatement(UPDATE_ACCOUNT_BALANCE);
+            preparedStatement = connection.prepareStatement(UPDATE_ACCOUNT_BALANCE_SUBTRACT);
             preparedStatement.setBigDecimal(1, amount);
             preparedStatement.setString(2, accountIban);
+            preparedStatement.executeQuery();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

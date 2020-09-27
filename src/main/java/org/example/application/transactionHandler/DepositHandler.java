@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE;
+import static org.example.sqlStatementManager.UpdateStatements.UPDATE_ACCOUNT_BALANCE_ADD;
 
 public class DepositHandler {
 
@@ -23,9 +23,10 @@ public class DepositHandler {
         PreparedStatement preparedStatement;
         try {
             connection = databaseManager.getConnection();
-            preparedStatement = connection.prepareStatement(UPDATE_ACCOUNT_BALANCE);
+            preparedStatement = connection.prepareStatement(UPDATE_ACCOUNT_BALANCE_ADD);
             preparedStatement.setBigDecimal(1, amount);
             preparedStatement.setString(2, accountIban);
+            preparedStatement.executeQuery();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
