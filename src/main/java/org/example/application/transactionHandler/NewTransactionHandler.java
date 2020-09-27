@@ -18,7 +18,7 @@ public class NewTransactionHandler {
         this.databaseManager = DatabaseManager.getDatabaseManagerInstance();
     }
 
-    public void handle(String toAccountIban, String fromAccountIban, BigDecimal currentBalance, BigDecimal amount) {
+    public void handle(String toAccountIban, String fromAccountIban, BigDecimal amount) {
         Connection connection = null;
         PreparedStatement preparedStatement;
         Date date = Date.valueOf(LocalDate.now());
