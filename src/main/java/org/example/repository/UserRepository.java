@@ -38,7 +38,7 @@ public class UserRepository {
                         .setSurname(resultSet.getString("surname"))
                         .setPhoneNumber(resultSet.getString("phone_number"))
                         .setEmailAddress(resultSet.getString("email_address"))
-                        .setAccount("account_iban")
+                        .setAccount(resultSet.getString("account_iban"))
                         .createUserModel();
             }
 
