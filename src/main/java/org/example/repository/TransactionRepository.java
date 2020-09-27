@@ -94,7 +94,7 @@ public class TransactionRepository {
         return transactionList;
     }
 
-    public TransactionModel getSignleTransactionByIban(String transactionIban) {
+    public TransactionModel getSingleTransactionByIban(String transactionIban) {
         Connection connection = null;
         PreparedStatement preparedStatement;
         TransactionModel transaction = null;
