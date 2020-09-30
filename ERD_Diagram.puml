@@ -1,0 +1,39 @@
+@startuml
+
+hide circle
+skinparam linetype ortho
+
+entity "Users" as users {
+  * **id : int <<generated>> **
+  --
+  *username : varchar(255)
+  *password : varchar(255)
+  *name : varchar(255)
+  *surname : varchar(255)
+  phone_number : varchar(32)
+  email_adress : varchar(255)
+  *account_iban : varchar(32) <<FK>>
+}
+
+entity "Accounts" as accounts {
+  * **id : int <<generated>> **
+  --
+  *iban : varchar(32)
+  *balance decimal(19.4)
+}
+
+entity "Transactions" as transactions {
+  * **id : int <<generated>> **
+  --
+  *from_account_iban : varchar(32) <<FK>>
+  *to_account_iban : varchar(32) <<FK>
+  *amount : decimal(19,4)
+  *date : date
+  *time : time
+}
+
+users ||..|| accounts
+accounts ||..|{ transactions
+accounts ||..|{ transactions
+
+@enduml

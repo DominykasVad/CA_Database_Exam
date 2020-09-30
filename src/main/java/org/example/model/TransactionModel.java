@@ -6,13 +6,13 @@ import java.sql.Time;
 
 public class TransactionModel {
     private int id;
-    private AccountModel fromAccount;
-    private AccountModel toAccount;
+    private String fromAccount;
+    private String toAccount;
     private BigDecimal amount;
     private Date date;
     private Time time;
 
-    public TransactionModel(int id, AccountModel fromAccount, AccountModel toAccount, BigDecimal amount, Date date, Time time) {
+    public TransactionModel(int id, String fromAccount, String toAccount, BigDecimal amount, Date date, Time time) {
         this.id = id;
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
@@ -29,19 +29,19 @@ public class TransactionModel {
         this.id = id;
     }
 
-    public AccountModel getFromAccount() {
+    public String getFromAccount() {
         return fromAccount;
     }
 
-    public void setFromAccount(AccountModel fromAccount) {
+    public void setFromAccount(String fromAccount) {
         this.fromAccount = fromAccount;
     }
 
-    public AccountModel getToAccount() {
+    public String getToAccount() {
         return toAccount;
     }
 
-    public void setToAccount(AccountModel toAccount) {
+    public void setToAccount(String toAccount) {
         this.toAccount = toAccount;
     }
 
